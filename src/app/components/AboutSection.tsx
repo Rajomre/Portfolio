@@ -85,7 +85,7 @@ export default function AboutSection() {
         {/* Section header */}
         <div className="reveal mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-            01 / About
+            About
           </p>
           <h2 className="section-heading text-foreground">
             The developer behind the{' '}
@@ -177,8 +177,8 @@ export default function AboutSection() {
               </h3>
               <div className="glass rounded-xl p-5 border border-primary/15">
                 <p className="font-semibold text-foreground text-sm">Diploma in Computer Science</p>
-                <p className="text-primary text-xs font-medium mt-0.5">Polytechnic Institute</p>
-                <p className="text-muted-foreground text-xs mt-1">2021 – 2023 · Computer Science</p>
+                <p className="text-primary text-xs font-medium mt-0.5">Goverment Polytechnic Institute</p>
+                <p className="text-muted-foreground text-xs mt-1">2024 – 2027 · Computer Science</p>
               </div>
             </div>
           </div>

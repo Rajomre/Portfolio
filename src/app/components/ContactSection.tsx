@@ -141,8 +141,8 @@ export default function ContactSection() {
                       </svg>
                     ),
                     label: 'Email',
-                    value: 'alex@portfoliox.dev',
-                    href: 'mailto:alex@portfoliox.dev',
+                    value: 'officialrajomre@gmail.com',
+                    href: 'rajomre9211@gmail.com',
                   },
                   {
                     icon: (
@@ -151,8 +151,8 @@ export default function ContactSection() {
                       </svg>
                     ),
                     label: 'Phone',
-                    value: '+1 (512) 555-0174',
-                    href: 'tel:+15125550174',
+                    value: '7985760057',
+                    href: 'tel:+917985760057',
                   },
                   {
                     icon: (
@@ -162,7 +162,7 @@ export default function ContactSection() {
                       </svg>
                     ),
                     label: 'Location',
-                    value: 'San Francisco, CA',
+                    value: 'Delhi(India)',
                     href: undefined,
                   },
                 ].map((item) => (
@@ -256,7 +256,7 @@ export default function ContactSection() {
                       autoComplete="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Jordan Smith"
+                      placeholder="Raj Omre"
                       className="form-input"
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? 'name-error' : undefined}
@@ -278,7 +278,7 @@ export default function ContactSection() {
                       autoComplete="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="jordan@company.com"
+                      placeholder="ABC1234@gmail.com"
                       className="form-input"
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? 'email-error' : undefined}

@@ -76,20 +76,20 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
 {
   id: 1,
-  date: '2023 — Present',
-  title: 'Web Developer',
-  organization: 'Freelance / Self-Employed',
+  date: '2022 — 2024',
+  title: 'Compeleted Intermediate',
+  organization: 'S.R Inter College Orai',
   description:
-  'Building web applications and management systems for clients using ASP.Net Core MVC, ReactJS, and SQL. Focused on delivering clean, functional, and user-friendly solutions.',
-  type: 'work'
+  'Completed Intermediate education with strong academic foundation,preparing for further studies in computer science',
+  type: 'education'
 },
 {
   id: 2,
-  date: '2021 — 2023',
+  date: '2024 — 2027',
   title: 'Diploma in Computer Science',
   organization: 'Polytechnic Institute',
   description:
-  'Completed Diploma in Computer Science with focus on programming fundamentals, web development, database management, and software engineering principles.',
+  'Pursing Diploma in Computer Science with focus on programming fundamentals, web development, database management, and software engineering principles.',
   type: 'education'
 }];
 
