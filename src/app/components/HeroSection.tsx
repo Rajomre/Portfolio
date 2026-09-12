@@ -1,8 +1,10 @@
 'use client';
-
+import  { useState } from 'react';
 import React, { useEffect, useRef } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import { socialLinks } from '@/data/portfolioData';
+ import {  } from 'react';
+
 
 const SocialIcon = ({ icon, name }: {icon: string;name: string;}) => {
   const icons: Record<string, React.ReactNode> = {
@@ -31,6 +33,7 @@ const SocialIcon = ({ icon, name }: {icon: string;name: string;}) => {
 };
 
 export default function HeroSection() {
+  const [isImageHovered, setIsImageHovered] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Animated particle grid
@@ -234,15 +237,24 @@ export default function HeroSection() {
                   style={{ padding: 4 }}>
                   
                   <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                    <AppImage
-                      src="https://img.rocket.new/generatedImages/rocket_gen_img_1ab7aa036-1763292425947.png"
-                      alt="Raj Omre — web developer portrait, professional headshot"
-                      width={252}
-                      height={252}
-                      priority
-                      className="w-full h-full object-cover" />
-                    
-                  </div>
+                    <div
+                      onMouseEnter={() => setIsImageHovered(true)}
+                      onMouseLeave={() => setIsImageHovered(false)}
+                      className="relative">
+                      <AppImage
+                        src="/assets/images/profile pic.jpeg"
+                        alt="Raj Omre — web developer portrait, professional headshot"
+                        width={252}
+                        height={252}
+                        priority
+                        className={`w-full h-full object-cover rounded-full transition-all duration-300 ${
+                          isImageHovered ? 'scale-125 shadow-2xl' : ''
+                        }`}
+                      />
+                      
+                      
+                    </div>
+    </div>
                 </div>
               </div>
 
@@ -265,12 +277,12 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator">
           <span className="text-xs text-muted-foreground tracking-widest uppercase">Scroll</span>
           <svg
-            width="16"
-            height="16"
+            width="10"
+            height="10"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -282,6 +294,6 @@ export default function HeroSection() {
           </svg>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

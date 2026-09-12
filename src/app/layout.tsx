@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'PortfolioX — Alex Rivera, Full-Stack Developer',
+  title: 'Portfolio — Raj Omre, Full-Stack Developer',
   description:
-    'Alex Rivera is a full-stack developer specializing in React, Next.js, and Node.js. Building fast, accessible, and beautifully designed web applications.',
+    'Raj Omre is a full-stack developer specializing in React and Node.js. Building fast, accessible, and beautifully designed web applications.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
