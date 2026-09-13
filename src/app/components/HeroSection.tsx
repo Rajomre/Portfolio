@@ -196,7 +196,7 @@ export default function HeroSection() {
                 </svg>
               </button>
               <a
-                href="/resume-alex-rivera.pdf"
+                href="/assets/RAJ.pdf"
                 download
                 className="px-7 py-3 border border-primary/50 text-primary font-semibold rounded-md hover:bg-primary/10 transition-all duration-200 text-sm flex items-center gap-2"
                 aria-label="Download resume">
@@ -270,7 +270,7 @@ export default function HeroSection() {
                 aria-hidden="true">
                 
                 <span className="text-xs font-semibold text-foreground">
-                  Web Developer
+                  Full Stack Developer
                 </span>
               </div>
             </div>

@@ -101,10 +101,10 @@ export const stats: Stat[] = [
 
 
 export const socialLinks: SocialLink[] = [
-{ name: 'GitHub', href: '#', icon: 'github' },
-{ name: 'LinkedIn', href: '#', icon: 'linkedin' },
-{ name: 'Instagram', href: '#', icon: 'instagram' },
-{ name: 'Email', href: 'mailto:raj.omre@email.com', icon: 'email' }];
+{ name: 'GitHub', href: 'https://github.com/Rajomre', icon: 'github' },
+{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/rajomre', icon: 'linkedin' },
+{ name: 'Instagram', href: 'https://www.instagram.com/mr._.order/', icon: 'instagram' },
+{ name: 'Email', href: 'mailto:officialrajomre@gmail.com', icon: 'email' }];
 
 
 export const navLinks = [
