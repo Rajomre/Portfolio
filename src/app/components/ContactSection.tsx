@@ -1,8 +1,13 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { socialLinks } from '@/data/portfolioData';
+'use client';
 
+import React, { useState, useRef, useEffect } from 'react';
+
+//  EmailJS ko import karo
+import emailjs from '@emailjs/browser';
+
+import { socialLinks } from '@/data/portfolioData';
 interface FormState {
   name: string;
   email: string;
@@ -79,18 +84,78 @@ export default function ContactSection() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-    setSubmitting(true);
-    // Simulate async submit
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-      setForm({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
-  };
+  // =====================================================
+//  REAL EMAIL SENDING FUNCTION
+// =====================================================
 
+const handleSubmit = async (e: React.FormEvent) => {
+  // Form ko normally reload hone se rokta hai
+  e.preventDefault();
+
+  // Pehle existing validation check hogi
+  if (!validate()) return;
+
+  // Button ko "Sending..." state mein le jayega
+  setSubmitting(true);
+
+  try {
+
+    // =================================================
+    
+    // =================================================
+
+    await emailjs.send(
+
+      // SERVICE ID 
+      'service_bzuks7w',
+
+      // TEMPLATE ID 
+      'template_1p9he18',
+
+      // FORM KA DATA EMAILJS KO BHEJNA
+      {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+
+      //  PUBLIC KEY 
+      {
+        publicKey: 'usR5efyV_lEzX68kR',
+      }
+    );
+
+    // =================================================
+    //EMAIL SUCCESSFULLY SEND HO GAYA
+    // =================================================
+
+    setSubmitted(true);
+
+    // Form ko empty kar do
+    setForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+
+  } catch (error) {
+
+    // =================================================
+    // 
+    // =================================================
+
+    console.error('Email sending failed:', error);
+
+    alert('Failed to send message. Please try again.');
+
+  } finally {
+
+    // Sending state ko remove karo
+    setSubmitting(false);
+  }
+};
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -115,7 +180,7 @@ export default function ContactSection() {
         {/* Header */}
         <div className="reveal mb-16 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-            06 / Contact
+             Contact us:
           </p>
           <h2 className="section-heading text-foreground">
             Let&apos;s build something{' '}
@@ -227,7 +292,7 @@ export default function ContactSection() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Message sent!</h3>
                 <p className="text-muted-foreground text-sm max-w-xs">
-                  Thanks for reaching out, Alex will get back to you within 24 hours.
+                  Thanks for reaching out, I'll get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}

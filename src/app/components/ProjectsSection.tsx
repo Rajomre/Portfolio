@@ -40,7 +40,7 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="reveal mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-            03 / Projects
+             Projects
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <h2 className="section-heading text-foreground">

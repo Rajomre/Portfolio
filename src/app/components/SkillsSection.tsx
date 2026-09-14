@@ -98,7 +98,7 @@ export default function SkillsSection() {
         {/* Header */}
         <div ref={sectionRef} className="reveal mb-16 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-            02 / Skills
+             Skills
           </p>
           <h2 className="section-heading text-foreground">
             Technologies I{' '}

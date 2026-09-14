@@ -39,7 +39,7 @@ export default function ExperienceSection() {
         {/* Header */}
         <div className="reveal mb-16 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-            04 / Experience
+            Experience
           </p>
           <h2 className="section-heading text-foreground">
             My{' '}

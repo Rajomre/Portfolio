@@ -107,7 +107,7 @@ export default function AboutSection() {
               
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 glass rounded-lg px-4 py-2 border border-primary/20">
-                <span className="text-xs font-semibold text-foreground">San Francisco, CA</span>
+                <span className="text-xs font-semibold text-foreground"></span>
               </div>
             </div>
 
