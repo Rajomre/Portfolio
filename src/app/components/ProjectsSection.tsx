@@ -38,7 +38,7 @@ export default function ProjectsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="reveal mb-16">
+        <div className=" mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
              Projects
           </p>
@@ -48,10 +48,14 @@ export default function ProjectsSection() {
               <span className="text-gradient-red">built</span>
             </h2>
             <a
-              href="#"
-              className="text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-1.5"
-              aria-label="View all projects on GitHub"
-            >
+              
+                href="https://github.com/Rajomre"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-1.5"
+                aria-label="View all projects on GitHub"
+               >
+            
               View all on GitHub
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -104,6 +108,8 @@ export default function ProjectsSection() {
                 <div className="flex items-center gap-3 pt-1">
                   <a
                     href={project?.github}
+                    target="_blank"
+                      rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
                     aria-label={`${project?.title} GitHub repository`}
                   >
@@ -112,16 +118,7 @@ export default function ProjectsSection() {
                     </svg>
                     GitHub
                   </a>
-                  <a
-                    href={project?.live}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-accent transition-colors ml-auto"
-                    aria-label={`${project?.title} live demo`}
-                  >
-                    Live Demo
-                    <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+
                 </div>
               </div>
             </article>

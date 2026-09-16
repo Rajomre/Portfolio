@@ -73,13 +73,13 @@ export default function AboutSection() {
       id="about"
       ref={sectionRef}
       className="py-24 relative overflow-hidden"
-      aria-label="About">
-      
+      aria-label="About"
+    >
       {/* Background accent */}
       <div
         className="blob-red absolute w-[500px] h-[500px] top-0 right-0 opacity-30 pointer-events-none"
-        aria-hidden="true" />
-      
+        aria-hidden="true"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
@@ -103,11 +103,12 @@ export default function AboutSection() {
                 alt="Code editor on screen with dark background, deep shadows, atmospheric developer workspace"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover" />
-              
+                className="object-cover"
+              />
+
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 glass rounded-lg px-4 py-2 border border-primary/20">
-                <span className="text-xs font-semibold text-foreground"></span>
+                <span className="text-xs font-semibold text-foreground" />
               </div>
             </div>
 
@@ -115,19 +116,19 @@ export default function AboutSection() {
             <div
               ref={statsRef}
               className="reveal-stagger grid grid-cols-3 gap-3"
-              aria-label="Career statistics">
-              
-              {stats.map((s) =>
-              <div
-                key={s.label}
-                className="glass rounded-xl p-4 text-center border border-primary/15 hover:border-primary/40 transition-all duration-300 hover:glow-red-sm">
-                
+              aria-label="Career statistics"
+            >
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="glass rounded-xl p-4 text-center border border-primary/15 hover:border-primary/40 transition-all duration-300 hover:glow-red-sm"
+                >
                   <p className="text-2xl font-extrabold text-primary leading-none mb-1">
                     <CountUp target={s.value} suffix={s.suffix} active={statsActive} />
                   </p>
                   <p className="text-xs text-muted-foreground leading-tight">{s.label}</p>
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
@@ -136,7 +137,7 @@ export default function AboutSection() {
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">Who I am</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I&apos;m a web developer with a{' '}
+                I&apos;m a computer science student currently pursuing a{' '}
                 <span className="text-foreground font-medium">Diploma in Computer Science</span>,
                 passionate about building modern, responsive web applications. My work spans
                 both frontend and backend development with a focus on{' '}
@@ -144,9 +145,10 @@ export default function AboutSection() {
                 <span className="text-foreground font-medium">practical solutions</span>.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I work with technologies like ReactJS, ASP.Net Core MVC, C#, Java, and SQL to
-                build full-stack applications. I enjoy turning complex problems into simple,
-                elegant solutions that users love to interact with.
+                I work with technologies such as ReactJS, ASP.NET Core MVC, C#, Java, and SQL,
+                with hands-on experience building responsive web applications and database-driven
+                projects. I enjoy learning new technologies, solving practical problems, and writing
+                clean, maintainable code.
               </p>
             </div>
 
@@ -157,16 +159,16 @@ export default function AboutSection() {
               </h3>
               <ul className="space-y-3">
                 {[
-                'Built a Management System with ASP.Net Core MVC and SQL',
-                'Developed a personal Portfolio using ReactJS and modern web technologies',
-                'Proficient in both frontend (HTML, CSS3, JS, ReactJS) and backend (C#, Java, ASP.Net)',
-                'Strong foundation in database design and SQL query optimization'].
-                map((item) =>
-                <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  'Developed a console-based Student Management System using C#, including file handling, exception handling, collections, and JSON data persistence',
+                  'Built a responsive personal portfolio using ReactJS and modern web technologies',
+                  'Hands-on experience with frontend technologies including HTML, CSS, JavaScript, and ReactJS',
+                  'Worked with SQL databases, CRUD operations, and database-driven applications'
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" aria-hidden="true" />
                     {item}
                   </li>
-                )}
+                ))}
               </ul>
             </div>
 
@@ -175,15 +177,51 @@ export default function AboutSection() {
                 <span className="w-4 h-px bg-primary" aria-hidden="true" />
                 Education
               </h3>
-              <div className="glass rounded-xl p-5 border border-primary/15">
+
+              {/* Diploma */}
+              <div className="glass rounded-xl p-5 border border-primary/15 mb-3">
                 <p className="font-semibold text-foreground text-sm">Diploma in Computer Science</p>
-                <p className="text-primary text-xs font-medium mt-0.5">Goverment Polytechnic Institute</p>
-                <p className="text-muted-foreground text-xs mt-1">2024 – 2027 · Computer Science</p>
+                <p className="text-primary text-xs font-medium mt-0.5">
+                  Government Polytechnic Sikandra, Kanpur Dehat
+                </p>
+                <p className="text-xs mt-1 text-muted-foreground">Currently Pursuing · 2024 – 2027</p>
+                <p className="text-muted-foreground text-xs mt-2 leading-relaxed">
+                  Relevant coursework: Programming, Data Structures, Database Management,
+                  Web Development, and Computer Networks.
+                </p>
               </div>
-            </div>
-          </div>
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+  {/* Senior Secondary */}
+  <div className="glass rounded-xl p-5 border border-primary/15">
+    <p className="font-semibold text-foreground text-sm">
+      Senior Secondary (Class XII)
+    </p>
+    <p className="text-primary text-xs font-medium mt-0.5">
+      S.R. Inter College, Orai
+    </p>
+    <p className="text-muted-foreground text-xs mt-1">
+      Board of High School and Intermediate Education, Uttar Pradesh · 2024
+    </p>
+  </div>
+
+  {/* Secondary */}
+  <div className="glass rounded-xl p-5 border border-primary/15">
+    <p className="font-semibold text-foreground text-sm">
+      Secondary (Class X)
+    </p>
+    <p className="text-primary text-xs font-medium mt-0.5">
+      S.R. Inter College, Orai
+    </p>
+    <p className="text-muted-foreground text-xs mt-1">
+      Board of High School and Intermediate Education, Uttar Pradesh · 2022
+    </p>
+  </div>
+</div>
         </div>
       </div>
-    </section>);
-
+      </div>
+      </div>
+    </section>
+  );
 }

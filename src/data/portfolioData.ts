@@ -57,8 +57,9 @@ export const projects: Project[] = [
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_12ab8ca84-1772594775760.png",
   imageAlt: 'Management system dashboard interface on dark screen, organized data tables and charts',
   tags: ['ASP.Net Core MVC', 'C#', 'SQL', 'JavaScript'],
-  github: '#',
-  live: '#'
+  github: 'https://github.com/ArnavOG/StudentManagementSystem.git',
+
+       live: '#'
 },
 {
   id: 2,
@@ -68,21 +69,25 @@ export const projects: Project[] = [
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_16ca14300-1785100740852.png",
   imageAlt: 'Personal portfolio website on dark screen with red accent design, professional layout',
   tags: ['ReactJS', 'HTML5', 'CSS3', 'JavaScript'],
-  github: '#',
+  github: 'https://github.com/Rajomre/Portfolio.git',
   live: '#'
 }];
 
 
 export const experiences: Experience[] = [
 {
-  id: 1,
-  date: '2022 — 2024',
-  title: 'Compeleted Intermediate',
-  organization: 'S.R Inter College Orai',
-  description:
-  'Completed Intermediate education with strong academic foundation,preparing for further studies in computer science',
-  type: 'education'
-},
+  
+  
+    id: 1,
+    date: '2025 — 2026',
+    title: 'Industrial Training Intern',
+    organization: 'BTPS',
+    description:
+  'Completed industrial training at BTPS, where I learned Java, web development fundamentals, C#, and ASP.NET MVC framework concepts while gaining exposure to technical workflows.',
+      type: 'work',
+  },
+
+
 {
   id: 2,
   date: '2024 — 2027',
@@ -96,16 +101,32 @@ export const experiences: Experience[] = [
 
 export const stats: Stat[] = [
 { value: 2, suffix: '+', label: 'Projects Completed' },
-{ value: 2, suffix: '+', label: 'Years Experience' },
+{ value: 2, suffix: '+', label: 'Years Learning & Building'},
 { value: 8, suffix: '+', label: 'Technologies Used' }];
 
 
 export const socialLinks: SocialLink[] = [
-{ name: 'GitHub', href: 'https://github.com/Rajomre', icon: 'github' },
-{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/rajomre', icon: 'linkedin' },
-{ name: 'Instagram', href: 'https://www.instagram.com/mr._.order/', icon: 'instagram' },
-{ name: 'Email', href: 'mailto:officialrajomre@gmail.com', icon: 'email' }];
-
+  {
+    name: 'GitHub',
+    href: 'https://github.com/Rajomre',
+    icon: 'github',
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/rajomre',
+    icon: 'linkedin',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/mr._.order/',
+    icon: 'instagram',
+  },
+  {
+    name: 'Email',
+    href: 'mailto:officialrajomre@gmail.com',
+    icon: 'email',
+  },
+];
 
 export const navLinks = [
 { label: 'About', href: '#about' },

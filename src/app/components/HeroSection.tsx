@@ -1,9 +1,8 @@
 'use client';
-import  { useState } from 'react';
-import React, { useEffect, useRef } from 'react';
-import AppImage from '@/components/ui/AppImage';
+import React, { useEffect, useRef, useState } from 'react';
 import { socialLinks } from '@/data/portfolioData';
  import {  } from 'react';
+import AppImage from '@/components/ui/AppImage';
 
 
 const SocialIcon = ({ icon, name }: {icon: string;name: string;}) => {
@@ -149,7 +148,7 @@ export default function HeroSection() {
             <div className="anim-in-1 flex items-center gap-2 px-4 py-2 glass rounded-full border border-primary/20">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Available for work
+                Open to Internships
               </span>
             </div>
 
@@ -214,6 +213,8 @@ export default function HeroSection() {
               <a
                 key={s.name}
                 href={s.href}
+                target={s.icon !== 'email' ? '_blank' : undefined}
+                rel={s.icon !== 'email' ? 'noopener noreferrer' : undefined}
                 aria-label={s.name}
                 className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-200">
                 
@@ -248,7 +249,7 @@ export default function HeroSection() {
                         height={252}
                         priority
                         className={`w-full h-full object-cover rounded-full transition-all duration-300 ${
-                          isImageHovered ? 'scale-125 shadow-2xl' : ''
+                          isImageHovered ? 'scale-105 shadow-2xl' : ''
                         }`}
                       />
                       

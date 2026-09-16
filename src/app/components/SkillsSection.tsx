@@ -1,15 +1,24 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import { skills } from '@/data/portfolioData';
 import type { Skill } from '@/data/portfolioData';
 
-function SkillCard({ skill, index }: { skill: Skill; index: number }) {
+function SkillCard({
+  skill,
+  index,
+  onActivate,
+  onDeactivate,
+}: {
+  skill: Skill;
+  index: number;
+  onActivate: () => void;
+  onDeactivate: () => void;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const fillRef = useRef<HTMLDivElement>(null);
-  const triggered = useRef(false);
-
+const fillRef = useRef<HTMLDivElement>(null);
+const triggered = useRef(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,9 +42,12 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
   return (
     <div
       ref={cardRef}
-      className="glass rounded-xl p-5 border border-primary/10 hover:border-primary/50 transition-all duration-300 hover:glow-red-sm hover:-translate-y-1 group"
+      className="glass rounded-xl p-5 border border-primary/10 hover:border-primary/50 transition-all duration-300 hover:glow-red-sm  group cursor-pointer"
       role="article"
       aria-label={`${skill.name} — ${skill.proficiency}% proficiency`}
+      onMouseEnter={onActivate}
+      onMouseLeave={onDeactivate}
+      onClick={onActivate}
     >
       <div className="flex items-start justify-between mb-4">
         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -66,7 +78,8 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
 
 export default function SkillsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-
+    
+  const [activeSkill, setActiveSkill] = useState<Skill | null>(null);
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -105,8 +118,7 @@ export default function SkillsSection() {
             <span className="text-gradient-red">work with</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
-            A curated set of tools and technologies I reach for when building products that scale.
-          </p>
+Technologies and tools I use to learn, build projects, and solve practical problems.          </p>
         </div>
 
         {/* Skills grid */}
@@ -114,10 +126,29 @@ export default function SkillsSection() {
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           aria-label="Skills grid"
         >
-          {skills.map((skill, i) => (
-            <SkillCard key={skill.name} skill={skill} index={i} />
-          ))}
+{skills.map((skill, i) => (
+  <SkillCard
+    key={skill.name}
+    skill={skill}
+    index={i}
+    onActivate={() => setActiveSkill(skill)}
+    onDeactivate={() => setActiveSkill(null)}
+  />
+))}          
         </div>
+        <div
+  className="min-h-20 mt-8 max-w-3xl mx-auto text-center"
+  aria-live="polite"
+>
+  {activeSkill && (
+    <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
+      <span className="font-semibold text-primary">
+        {activeSkill.name}:{' '}
+      </span>
+      {activeSkill.category} — {activeSkill.proficiency}% proficiency
+    </p>
+  )}
+</div>
       </div>
     </section>
   );

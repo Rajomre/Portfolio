@@ -21,6 +21,18 @@ interface FormErrors {
   subject?: string;
   message?: string;
 }
+export const socialLink = [
+  {
+    name: 'GitHub',
+    href: 'https://github.com/',
+    icon: 'github',
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/',
+    icon: 'linkedin',
+  },
+];
 
 const SocialIcon = ({ icon, name }: { icon: string; name: string }) => {
   const icons: Record<string, React.ReactNode> = {
@@ -180,14 +192,15 @@ const handleSubmit = async (e: React.FormEvent) => {
         {/* Header */}
         <div className="reveal mb-16 text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-             Contact us:
+             Contact me:
           </p>
           <h2 className="section-heading text-foreground">
             Let&apos;s build something{' '}
             <span className="text-gradient-red">together</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto text-sm leading-relaxed">
-            Whether you have a project in mind, a role to fill, or just want to connect — my inbox is always open.
+  I’m open to entry-level opportunities, freelance projects, and collaborations. 
+  Feel free to reach out if you’d like to discuss a project or opportunity.
           </p>
         </div>
 
@@ -207,7 +220,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     ),
                     label: 'Email',
                     value: 'officialrajomre@gmail.com',
-                    href: 'rajomre9211@gmail.com',
+                    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=officialrajomre@gmail.com',  
                   },
                   {
                     icon: (
@@ -227,7 +240,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       </svg>
                     ),
                     label: 'Location',
-                    value: 'Delhi(India)',
+                    value: 'Delhi India',
                     href: undefined,
                   },
                 ].map((item) => (
@@ -276,7 +289,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">Available Now</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Open to full-time roles and select freelance projects. Response time: within 24 hours.
+  Open to entry-level opportunities, internships, freelance projects, and collaborations.
               </p>
             </div>
           </div>
@@ -321,7 +334,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       autoComplete="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Raj Omre"
+                      placeholder="Your full name"
                       className="form-input"
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? 'name-error' : undefined}
@@ -343,7 +356,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       autoComplete="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="ABC1234@gmail.com"
+                      placeholder="yourmail@gmail.com"
                       className="form-input"
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? 'email-error' : undefined}
@@ -386,7 +399,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project or opportunity..."
+                    placeholder="Tell me how I can help"
                     className="form-input resize-none"
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? 'message-error' : undefined}
@@ -407,7 +420,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <svg className="animate-spin" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                       </svg>
-                      Sending...
+                      Message sent
                     </>
                   ) : (
                     <>
