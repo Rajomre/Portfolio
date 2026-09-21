@@ -195,8 +195,8 @@ export default function HeroSection() {
                 </svg>
               </button>
               <a
-                href="/assets/RAJ.pdf"
-                download
+               href={`${process.env.NEXT_PUBLIC_BASE_PATH}/assets/RAJ.pdf`}
+               download
                 className="px-7 py-3 border border-primary/50 text-primary font-semibold rounded-md hover:bg-primary/10 transition-all duration-200 text-sm flex items-center gap-2"
                 aria-label="Download resume">
                 
@@ -243,8 +243,8 @@ export default function HeroSection() {
                       onMouseLeave={() => setIsImageHovered(false)}
                       className="relative">
                       <AppImage
-                        src="/assets/images/profile pic.jpeg"
-                        alt="Raj Omre — web developer portrait, professional headshot"
+                       src={`${process.env.NEXT_PUBLIC_BASE_PATH}/assets/images/profile pic.jpeg`}
+                       alt="Raj Omre — web developer portrait, professional headshot"
                         width={252}
                         height={252}
                         priority
