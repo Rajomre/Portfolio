@@ -2,6 +2,9 @@ import { imageHosts } from './image-hosts.config.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    env: {
+  NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS ? '/Portfolio' : '',
+},
     output: 'export',
   basePath: process.env.GITHUB_ACTIONS ? '/Portfolio' : '',
   productionBrowserSourceMaps: true,
